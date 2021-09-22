@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import styles from './FeedbackOptions.module.css';
 
-export default function FeedbackOptions({ options, onLeaveFeedback }) {
+export default function FeedbackOptions({ options, addFeedback }) {
   return options.map(option => (
     <button
       type="button"
-      onClick={() => onLeaveFeedback(option)}
+      onClick={() => addFeedback(option)}
       className={styles.btn}
       key={option}
     >
@@ -22,5 +22,5 @@ function makeFirstLetterBig(str) {
 
 FeedbackOptions.propTypes = {
   options: PropTypes.array.isRequired,
-  onLeaveFeedback: PropTypes.func.isRequired,
+  addFeedback: PropTypes.func.isRequired,
 };
